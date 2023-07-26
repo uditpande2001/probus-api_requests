@@ -1,0 +1,37 @@
+package com.example.rf_handler.entities;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "rf_diag")
+public class RfDiag {
+
+    @EmbeddedId
+    private RfDiagId id;
+
+    @Column(name = "gw_id")
+    private String gwId;
+
+    @Column(name = "sink_id")
+    private String sinkId;
+
+    @Column(name = "hop_count")
+    private Integer hopCount;
+
+    @Column(name = "end_point")
+    private String endPoint;
+
+    @Column(name = "travel_time")
+    private Integer travelTime;
+
+    @Column(name = "data")
+    private String data;
+
+    @Column(name = "next_hop")
+    private Integer nextHop;
+
+    // Getters and Setters (omitted for brevity)
+
+    // You can also add any other helper methods or constructors as needed
+}
+

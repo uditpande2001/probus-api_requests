@@ -1,0 +1,76 @@
+package com.example.entities;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
+
+public class MeterProfileDataId implements Serializable {
+
+    private static final long serialVersionUID = -2761486766497596906L;
+
+    private String meterNumber;
+
+    private LocalDateTime dateTime;
+
+    private LocalDateTime serverTime;
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((dateTime == null) ? 0 : dateTime.hashCode());
+        result = prime * result + ((meterNumber == null) ? 0 : meterNumber.hashCode());
+        result = prime * result + ((serverTime == null) ? 0 : serverTime.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        MeterProfileDataId other = (MeterProfileDataId) obj;
+        if (dateTime == null) {
+            if (other.dateTime != null)
+                return false;
+        } else if (!dateTime.equals(other.dateTime))
+            return false;
+        if (meterNumber == null) {
+            if (other.meterNumber != null)
+                return false;
+        } else if (!meterNumber.equals(other.meterNumber))
+            return false;
+        if (serverTime == null) {
+            if (other.serverTime != null)
+                return false;
+        } else if (!serverTime.equals(other.serverTime))
+            return false;
+        return true;
+    }
+
+    public LocalDateTime getDateTime() {
+        return dateTime;
+    }
+
+    public void setDateTime(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
+    }
+
+    public String getMeterNumber() {
+        return meterNumber;
+    }
+
+    public void setMeterNumber(String meterNumber) {
+        this.meterNumber = meterNumber;
+    }
+
+    public LocalDateTime getServerTime() {
+        return serverTime;
+    }
+
+    public void setServerTime(LocalDateTime serverTime) {
+        this.serverTime = serverTime;
+    }
+}

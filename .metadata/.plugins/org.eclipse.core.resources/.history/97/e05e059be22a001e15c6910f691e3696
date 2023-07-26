@@ -1,0 +1,16 @@
+package com.example.rf_handler.repositories;
+
+import java.security.Timestamp;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+@Repository
+
+public interface RfDiagRepository extends JpaRepository<RfDiagEntity, RfDiagId> {
+	
+	@Query(value = "SELECT * FROM rf_diag WHERE node_id = :nodeId AND server_time BETWEEN :startTime AND :endTime", nativeQuery = true)
+    List<RfDiagEntity> findByNodeIdAndServerTimeBetween(int nodeId, Timestamp startTime, Timestamp endTime);
+	
+	
+
+}

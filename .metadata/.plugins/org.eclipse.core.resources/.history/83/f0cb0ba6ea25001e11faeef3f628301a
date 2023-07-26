@@ -1,0 +1,145 @@
+package com.example.entities;
+
+import java.time.LocalDateTime;
+
+import jakarta.persistence.*;*;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.Lob;
+
+import org.hibernate.annotations.Type;
+
+@jakarta.persistence.Entity
+@IdClass(MeterProfileDataId.class)
+public class MeterProfileData {
+
+    @Id
+    @Column
+    private String meterNumber = null;
+
+    @Id
+    @Column
+    private LocalDateTime dateTime;
+
+    @Id
+    @Column
+    private LocalDateTime serverTime;
+
+    @Column
+    private LocalDateTime creationTime;
+
+    @Column
+    private LocalDateTime sensor_time;
+
+    @Column
+    private LocalDateTime tor;
+
+    @Column
+    private Long commandId = null;
+
+    @Column
+    private int nodeId;
+
+    @Column
+    private String type = null;
+
+    @Lob
+    @Type(type = "org.hibernate.type.TextType")
+    @Column
+    private String data;
+
+    @Column
+    private Boolean blank;
+
+    public Long getCommandId() {
+        return commandId;
+    }
+
+    public void setCommandId(Long commandId) {
+        this.commandId = commandId;
+    }
+
+    public String getMeterNumber() {
+        return meterNumber;
+    }
+
+    public void setMeterNumber(String meterNumber) {
+        this.meterNumber = meterNumber;
+    }
+
+    public int getNodeId() {
+        return nodeId;
+    }
+
+    public void setNodeId(int nodeId) {
+        this.nodeId = nodeId;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public LocalDateTime getServerTime() {
+        return serverTime;
+    }
+
+    public void setServerTime(LocalDateTime serverTime) {
+        this.serverTime = serverTime;
+    }
+
+    public LocalDateTime getDateTime() {
+        return dateTime;
+    }
+
+    public void setDateTime(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
+    }
+
+    public LocalDateTime getCreationTime() {
+        return creationTime;
+    }
+
+    public void setCreationTime(LocalDateTime creationTime) {
+        this.creationTime = creationTime;
+    }
+
+    public LocalDateTime getSensor_time() {
+        return sensor_time;
+    }
+
+    public void setSensor_time(LocalDateTime sensor_time) {
+        this.sensor_time = sensor_time;
+    }
+
+    public LocalDateTime getTor() {
+        return tor;
+    }
+
+    public void setTor(LocalDateTime tor) {
+        this.tor = tor;
+    }
+
+    public Boolean getBlank() {
+        return blank;
+    }
+
+    public void setBlank(Boolean blank) {
+        this.blank = blank;
+    }
+
+}

@@ -1,10 +1,12 @@
 package com.example.rf_handler;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.example.rf_handler.api_requests.RfCommands;
 import com.example.rf_handler.api_requests.authenticateTemp;
+import com.example.rf_handler.service.BillingService;
 import com.example.rf_handler.api_requests.Authenticate;
 
 @SpringBootApplication
@@ -14,8 +16,11 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 		 
 		 
-		 RfCommands rfcommand = new RfCommands();
-		 rfcommand.midnight();
+//		 RfCommands rfcommand = new RfCommands();
+//		 rfcommand.midnight();
+		 
+		 BillingService billingService = new BillingService();
+		 billingService.getBilling(900084);
 		
 		
 	}
